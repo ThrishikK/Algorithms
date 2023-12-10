@@ -1,0 +1,15 @@
+import math
+negative_infinity = -math.inf
+
+def max_subarray(numbers):
+    """Find the largest sum of any contiguous subarray."""
+    best_sum = negative_infinity
+    current_sum = 0
+    for x in numbers:
+        current_sum = max(x, current_sum + x)
+        best_sum = max(best_sum, current_sum)
+    return best_sum
+    
+array = [1,-1,2,3,5,-2,-3,-5]
+result = max_subarray(array)
+print(result)
