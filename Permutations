@@ -1,0 +1,12 @@
+def combinations(word, output, current=""):
+    if not word:
+        output.append(current)
+    else:
+        for i in range(len(word)):
+            remaining_letters = word[:i] + word[i + 1:]
+            combinations(remaining_letters, output, current + word[i])
+
+output = []
+combinations('abc', output)
+print(output)
+print(len(output))
